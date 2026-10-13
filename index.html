@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI Eksplorasi Modular Komprehensif: التَّعَارُف (Ta'aruf) - MTs Kelas VII</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Amiri for Arabic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        butter: {
+                            50: '#fffdf5',
+                            100: '#fff9e6',
+                            200: '#fff0bd',
+                            300: '#ffe28a',
+                            400: '#ffd052',
+                            500: '#f5b722',
+                            600: '#d99414',
+                            700: '#b37110',
+                            800: '#8f5513',
+                            900: '#754515',
+                            950: '#422409'
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#fcf6e8',
+                            200: '#f7ebcf',
+                            300: '#eee0ba',
+                            400: '#d9c898',
+                            500: '#bcab7a'
+                        },
+                        peach: {
+                            50: '#fff8f6',
+                            100: '#ffedea',
+                            200: '#ffd8d1',
+                            300: '#ffb9ac',
+                            400: '#ff8c75',
+                            500: '#f86142'
+                        },
+                        gold: {
+                            400: '#f1c40f',
+                            500: '#d4af37',
+                            600: '#b89728'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .islamic-pattern {
+            background-color: #fffdf5;
+            background-image: radial-gradient(#d99414 0.6px, transparent 0.6px), radial-gradient(#d99414 0.6px, #fffdf5 0.6px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f7ebcf;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffd052;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d99414;
+        }
+        .tab-active {
+            background-color: #ffd052 !important;
+            color: #422409 !important;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="h-full islamic-pattern text-slate-800 flex flex-col font-sans selection:bg-butter-200 selection:text-butter-900">
+
+    <header class="bg-butter-900 text-white shadow-lg border-b-4 border-butter-400 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-butter-400 rounded-xl flex items-center justify-center text-butter-950 font-bold text-2xl shadow-md border-2 border-white/20">
+                    <i class="fa-solid fa-kaaba"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-butter-400/20 text-butter-200 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-butter-400/30">Media Pembelajaran Komprehensif</span>
+                        <span class="text-xs text-butter-200">MTs Kelas VII • Fase D</span>
+                    </div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-wide font-arabic arabic-text">التَّعَارُفُ (Ta'aruf Master Edition)</h1>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1.5 bg-butter-950/40 p-1.5 rounded-xl border border-butter-800">
+                <button onclick="switchTab('beranda')" id="nav-beranda" class="px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 tab-active">
+                    <i class="fa-solid fa-house"></i> Beranda
+                </button>
+                <button onclick="switchTab('mufrodat')" id="nav-mufrodat" class="px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 text-butter-100 hover:bg-butter-800">
+                    <i class="fa-solid fa-book-open"></i> Mufrodat (20+)
+                </button>
+                <button onclick="switchTab('tarkib')" id="nav-tarkib" class="px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 text-butter-100 hover:bg-butter-800">
+                    <i class="fa-solid fa-puzzle-piece"></i> Qawa'id & Lab Kalimat
+                </button>
+                <button onclick="switchTab('hiwar')" id="nav-hiwar" class="px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 text-butter-100 hover:bg-butter-800">
+                    <i class="fa-solid fa-comments"></i> Multi-Hiwar Interaktif
+                </button>
+                <button onclick="switchTab('kuis')" id="nav-kuis" class="px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 text-butter-100 hover:bg-butter-800">
+                    <i class="fa-solid fa-award"></i> Evaluasi (10 Soal)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 my-auto">
+
+        <!-- Beranda Tab -->
+        <section id="tab-beranda" class="space-y-6">
+            <div class="bg-white rounded-2xl shadow-xl border border-butter-200 overflow-hidden">
+                <div class="bg-gradient-to-r from-butter-800 via-butter-900 to-butter-950 p-6 md:p-10 text-white relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl">
+                        <i class="fa-solid fa-book-quran"></i>
+                    </div>
+                    <div class="max-w-3xl relative z-10 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-butter-400 text-butter-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Modul Ekstra Komprehensif</span>
+                            <span class="bg-butter-800 text-butter-200 text-xs px-3 py-1 rounded-full border border-butter-700">Terintegrasi Google Sheets</span>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold font-arabic arabic-text leading-tight text-butter-100">أَهْلًا وَسَهْلًا بِكُمْ فِي دَرْسِ اللُّغَةِ الْعَرَبِيَّةِ</h2>
+                        <p class="text-butter-100/90 text-base md:text-lg leading-relaxed">
+                            Selamat datang di Sistem Pembelajaran Bahasa Arab Terpadu Topik <strong>التَّعَارُفُ (Ta'aruf)</strong> untuk Kelas VII Madrasah Tsanawiyah. Dilengkapi kuis interaktif yang secara otomatis menyimpan data pengerjaan siswa ke database Google Sheets guru.
+                        </p>
+                        <div class="pt-2 flex flex-wrap gap-3">
+                            <button onclick="switchTab('mufrodat')" class="bg-butter-400 hover:bg-butter-300 text-butter-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap"></i> Mulai Belajar Kosakata
+                            </button>
+                            <button onclick="switchTab('kuis')" class="bg-butter-800 hover:bg-butter-700 text-white font-semibold px-6 py-3 rounded-xl border border-butter-600 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-award"></i> Masuk Evaluasi Kuis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer Profile Card -->
+                <div class="p-6 md:p-8 bg-butter-50 border-b border-butter-200">
+                    <div class="bg-white rounded-2xl p-6 border border-butter-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                        <div class="relative shrink-0">
+                            <img src="https://i.freeimage.host/nWFJLuI.md.jpg" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/160x160/f5b722/ffffff?text=Aisya+Riska';" 
+                                 alt="Aisya Riska Rohani - https://freeimage.host/i/nWFJLuI" 
+                                 id="developer-photo-nWFJLuI"
+                                 class="w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border-4 border-butter-300 shadow-md">
+                            <span class="absolute -bottom-2 -right-2 bg-butter-500 text-white text-xs px-2.5 py-1 rounded-full font-bold shadow border border-white">
+                                <i class="fa-solid fa-chalkboard-user mr-1"></i> Pengembang
+                            </span>
+                        </div>
+                        <div class="space-y-3 text-center md:text-left flex-grow">
+                            <div>
+                                <span class="bg-butter-100 text-butter-900 text-xs font-bold px-3 py-1 rounded-full border border-butter-300 uppercase tracking-wider">Profil Pengembang Media</span>
+                                <h3 class="text-2xl font-bold text-butter-950 mt-1">Aisya Riska Rohani</h3>
+                                <p class="text-sm font-semibold text-butter-700">Guru Bahasa Arab</p>
+                                <p class="text-xs text-slate-600 flex items-center justify-center md:justify-start gap-1.5 mt-0.5">
+                                    <i class="fa-solid fa-school text-butter-600"></i> MTs Negeri 1 Gorontalo Utara
+                                </p>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed max-w-2xl">
+                                Disusun dan dikembangkan sebagai media pembelajaran interaktif berbasis teknologi untuk mengoptimalkan pembelajaran Bahasa Arab kurikulum madrasah secara komunikatif, kontekstual, dan terhubung dengan laporan evaluasi digital.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Objectives & Dimensions -->
+                <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-4 bg-cream-50">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-butter-200/80 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-butter-100 text-butter-800 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-butter-950 text-sm">Istima' & Qira'ah</h3>
+                            <p class="text-xs text-slate-600 mt-1">Menyimak lafal mufrodat & membaca teks perkenalan berharakat lengkap.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-butter-200/80 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-butter-100 text-butter-800 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-butter-950 text-sm">Kalam & Hiwar</h3>
+                            <p class="text-xs text-slate-600 mt-1">Simulasi interaktif dialog perkenalan antara siswa, guru, dan teman baru.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-butter-200/80 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-butter-100 text-butter-800 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-butter-950 text-sm">Tarkib & Kitabah</h3>
+                            <p class="text-xs text-slate-600 mt-1">Eksplorasi Dhomir, Isim Isyarah, dan Lab menyusun kalimat.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-butter-200/80 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-butter-100 text-butter-800 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-butter-950 text-sm">Sinkronisasi Database</h3>
+                            <p class="text-xs text-slate-600 mt-1">Hasil kuis otomatis tercatat di Google Sheets guru via Google Apps Script.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mufrodat Tab -->
+        <section id="tab-mufrodat" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-butter-200 space-y-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-b border-butter-100 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-butter-950 font-arabic arabic-text">المُفْرَدَاتُ وَالتَّعَابِيْرُ الشَّامِلَةُ (Bank Kosakata Komprehensif)</h2>
+                        <p class="text-sm text-slate-600">Pelajari 20+ kosakata utama, sapaan, profesi madrasah, dan kata ganti.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 w-full lg:w-auto">
+                        <input type="text" id="vocab-search" oninput="filterVocab()" placeholder="Cari kata/arti..." class="px-3 py-2 text-xs border border-butter-300 rounded-lg bg-cream-50 focus:outline-none focus:ring-2 focus:ring-butter-400 w-full sm:w-48">
+                        <select id="vocab-category" onchange="filterVocab()" class="px-3 py-2 text-xs border border-butter-300 rounded-lg bg-cream-50 focus:outline-none focus:ring-2 focus:ring-butter-400">
+                            <option value="all">Semua Kategori (20+)</option>
+                            <option value="salam">Sapaan & Ungkapan</option>
+                            <option value="tanya">Kata Tanya (Istifham)</option>
+                            <option value="profesi">Profesi & Status Madrasah</option>
+                            <option value="dhomir">Kata Ganti & Tunjuk</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center text-xs text-slate-500 px-1">
+                    <span id="vocab-count-label">Menampilkan 0 kosakata</span>
+                    <span><i class="fa-solid fa-volume-high text-butter-600 mr-1"></i> Klik ikon speaker untuk mendengarkan lafal</span>
+                </div>
+                <div id="vocab-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+            </div>
+        </section>
+
+        <!-- Tarkib Tab -->
+        <section id="tab-tarkib" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-butter-200 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-butter-950 font-arabic arabic-text">القَوَاعِدُ وَمَعْمَلُ الْجُمَلِ (Qawa'id & Laboratorium Kalimat)</h2>
+                    <p class="text-sm text-slate-600">Pelajari tata bahasa dan uji kemampuan menyusun kalimat Arab.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button onclick="selectTarkib(0)" id="tarkib-btn-0" class="p-3 rounded-xl border-2 border-butter-600 bg-butter-100 text-butter-950 font-semibold text-xs md:text-sm text-center transition-all shadow-sm">1. Istifham</button>
+                    <button onclick="selectTarkib(1)" id="tarkib-btn-1" class="p-3 rounded-xl border-2 border-butter-200 bg-white text-slate-700 font-semibold text-xs md:text-sm text-center transition-all hover:bg-butter-50">2. Dhomir Munfashil</button>
+                    <button onclick="selectTarkib(2)" id="tarkib-btn-2" class="p-3 rounded-xl border-2 border-butter-200 bg-white text-slate-700 font-semibold text-xs md:text-sm text-center transition-all hover:bg-butter-50">3. Isim Isyarah</button>
+                    <button onclick="selectTarkib(3)" id="tarkib-btn-3" class="p-3 rounded-xl border-2 border-butter-200 bg-white text-slate-700 font-semibold text-xs md:text-sm text-center transition-all hover:bg-butter-50">4. Dhomir Muttashil</button>
+                </div>
+                <div id="tarkib-content" class="bg-cream-100 p-6 rounded-2xl border border-butter-200 space-y-4"></div>
+                
+                <!-- Sentence Builder Lab -->
+                <div class="bg-butter-950 text-white p-6 rounded-2xl border border-butter-800 space-y-4">
+                    <div class="flex items-center justify-between border-b border-butter-800 pb-3">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-vial text-butter-400 text-lg"></i>
+                            <h3 class="font-bold text-sm md:text-base text-butter-100">Laboratorium Penyusun Kalimat</h3>
+                        </div>
+                        <span class="text-xs bg-butter-900 text-butter-300 px-3 py-1 rounded-full border border-butter-700">Latihan Konstruksi</span>
+                    </div>
+                    <p class="text-xs text-butter-200">Susun kata-kata acak berikut menjadi kalimat perkenalan Arab yang sempurna:</p>
+                    <div id="lab-target-meaning" class="p-3 bg-butter-900/80 rounded-xl border border-butter-800 text-xs text-butter-300 font-medium">Target: "..."</div>
+                    <div id="lab-selected-words" class="min-h-[56px] p-3 bg-butter-900 rounded-xl border-2 border-dashed border-butter-700 flex flex-wrap gap-2 items-center justify-end">
+                        <span class="text-xs text-butter-500 italic w-full text-center">Tekan kata-kata di bawah untuk menyusun kalimat di sini...</span>
+                    </div>
+                    <div id="lab-word-options" class="flex flex-wrap justify-center gap-2 pt-2"></div>
+                    <div class="flex justify-between items-center pt-3 border-t border-butter-800">
+                        <button onclick="resetSentenceLab()" class="px-4 py-2 bg-butter-900 hover:bg-butter-800 text-butter-300 text-xs rounded-lg transition-all border border-butter-700">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Reset Kata
+                        </button>
+                        <button onclick="checkSentenceLab()" class="px-6 py-2 bg-butter-400 hover:bg-butter-300 text-butter-950 font-bold text-xs rounded-lg transition-all shadow">
+                            <i class="fa-solid fa-check-double mr-1"></i> Periksa Susunan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hiwar Tab -->
+        <section id="tab-hiwar" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-butter-200 space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-butter-100 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-butter-950 font-arabic arabic-text">الْحِوَارُ الْمُتَنَوِّعُ (Simulasi Percakapan)</h2>
+                        <p class="text-sm text-slate-600">Pilih skenario percakapan dan latih kemampuan merespons.</p>
+                    </div>
+                    <select id="hiwar-scenario-select" onchange="changeHiwarScenario()" class="px-4 py-2 text-xs font-semibold bg-butter-100 text-butter-950 border border-butter-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-butter-400">
+                        <option value="0">Skenario 1: Siswa Baru (Ahmad & Mahmud)</option>
+                        <option value="1">Skenario 2: Siswi dengan Guru (Aisyah & Ustadzah)</option>
+                        <option value="2">Skenario 3: Menanyakan Asal Daerah</option>
+                    </select>
+                </div>
+                <div class="bg-butter-950 text-white p-6 rounded-2xl shadow-inner space-y-4 border border-butter-800">
+                    <div class="flex items-center justify-between border-b border-butter-800 pb-3">
+                        <div class="flex items-center gap-3">
+                            <div id="hiwar-avatar" class="w-10 h-10 rounded-full bg-butter-400 text-butter-950 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4 id="hiwar-partner-name" class="font-bold text-sm text-butter-100">Ahmad</h4>
+                                <span id="hiwar-partner-role" class="text-xs text-butter-300">Lawan Bicara</span>
+                            </div>
+                        </div>
+                        <span id="hiwar-step-badge" class="bg-butter-900 text-butter-300 text-xs px-3 py-1 rounded-full border border-butter-700">Langkah 1 dari 3</span>
+                    </div>
+                    <div id="chat-history" class="space-y-4 py-4 max-h-96 overflow-y-auto pr-2"></div>
+                    <div id="chat-options-box" class="pt-4 border-t border-butter-800 space-y-2">
+                        <p class="text-xs font-semibold text-butter-300 uppercase tracking-wider">Pilih Tanggapan Anda:</p>
+                        <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kuis Tab -->
+        <section id="tab-kuis" class="hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-butter-200 space-y-6">
+                
+                <!-- GAS Configuration Panel -->
+                <div class="bg-cream-50 p-4 rounded-xl border border-butter-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                    <div class="space-y-1">
+                        <span class="font-bold text-butter-950 text-sm flex items-center gap-1.5"><i class="fa-solid fa-gear text-butter-600"></i> Pengaturan Koneksi Google Sheets</span>
+                        <p class="text-slate-600">Masukkan URL Web App Google Apps Script guru agar hasil evaluasi siswa tersimpan otomatis.</p>
+                    </div>
+                    <div class="flex gap-2 w-full md:w-auto">
+                        <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="px-3 py-2 border border-butter-300 rounded-lg bg-white w-full md:w-64 focus:ring-2 focus:ring-butter-400">
+                        <button onclick="saveGasUrl()" class="px-4 py-2 bg-butter-800 hover:bg-butter-900 text-white font-semibold rounded-lg shrink-0">Simpan URL</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Start Screen -->
+                <div id="quiz-start-screen" class="text-center py-6 space-y-6">
+                    <div class="w-20 h-20 bg-butter-100 text-butter-800 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner border border-butter-200">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="space-y-2 max-w-lg mx-auto">
+                        <h2 class="text-2xl font-bold text-butter-950 font-arabic arabic-text">اخْتِبَارُ الْقُدْرَةِ الشَّامِلُ (Kuis Formatif Master 10 Soal)</h2>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Uji pemahaman Mufrodat, Tarkib, dan Hiwar. Masukkan identitas Anda sebelum memulai kuis agar tersimpan di database guru.
+                        </p>
+                    </div>
+
+                    <!-- Student Identity Form -->
+                    <div class="max-w-md mx-auto p-5 bg-cream-100 rounded-2xl border border-butter-200 text-left space-y-3 shadow-sm">
+                        <h4 class="font-bold text-butter-950 text-xs uppercase tracking-wider"><i class="fa-solid fa-user-pen mr-1"></i> Identitas Siswa:</h4>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Nama Lengkap Siswa:</label>
+                            <input type="text" id="student-name" placeholder="Contoh: Ahmad Fauzan" class="w-full px-3 py-2 text-xs border border-butter-300 rounded-lg bg-white focus:ring-2 focus:ring-butter-400">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Kelas:</label>
+                            <select id="student-class" class="w-full px-3 py-2 text-xs border border-butter-300 rounded-lg bg-white focus:ring-2 focus:ring-butter-400">
+                                <option value="VII-A">Kelas VII-A</option>
+                                <option value="VII-B">Kelas VII-B</option>
+                                <option value="VII-C">Kelas VII-C</option>
+                                <option value="VII-D">Kelas VII-D</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="startQuiz()" class="bg-butter-400 hover:bg-butter-300 text-butter-950 font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all text-base">
+                        Mulai Evaluasi Sekarang <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Quiz Main Container -->
+                <div id="quiz-container" class="hidden space-y-6">
+                    <div class="flex justify-between items-center border-b border-butter-100 pb-4">
+                        <span id="quiz-progress" class="text-xs font-bold text-butter-900 bg-butter-100 px-3 py-1 rounded-full border border-butter-200">Soal 1 dari 10</span>
+                        <div class="flex items-center gap-2">
+                            <span id="quiz-student-badge" class="text-xs bg-cream-100 text-butter-950 px-3 py-1 rounded-full border border-butter-200 font-semibold">Siswa: -</span>
+                            <span id="quiz-score-live" class="text-xs font-bold text-butter-800 bg-butter-200/50 px-3 py-1 rounded-full border border-butter-300">Skor: 0</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 id="quiz-question" class="text-lg md:text-xl font-semibold text-butter-950 leading-relaxed"></h3>
+                        <div id="quiz-options" class="grid grid-cols-1 gap-3"></div>
+                    </div>
+
+                    <div id="quiz-explanation" class="hidden p-4 rounded-xl border transition-all space-y-2"></div>
+
+                    <div class="flex justify-end pt-4 border-t border-butter-100">
+                        <button id="next-question-btn" onclick="nextQuestion()" class="hidden bg-butter-800 hover:bg-butter-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm transition-all shadow">
+                            Soal Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Final Result Screen -->
+                <div id="quiz-result-screen" class="hidden text-center py-8 space-y-6">
+                    <div class="w-20 h-20 bg-butter-200 text-butter-800 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner border border-butter-300">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div class="space-y-2 max-w-md mx-auto">
+                        <h2 class="text-2xl font-bold text-butter-950">Laporan Hasil Evaluasi</h2>
+                        <p id="final-score-text" class="text-4xl font-extrabold text-butter-700">Skor Anda: 100 / 100</p>
+                        <p id="sync-status-text" class="text-xs font-semibold text-emerald-700 bg-emerald-50 p-2 rounded-lg border border-emerald-200">Menyimpan hasil ke database Google Sheets...</p>
+                    </div>
+
+                    <div class="max-w-md mx-auto p-4 bg-cream-50 rounded-xl border border-butter-200 text-xs text-left space-y-2">
+                        <span class="font-bold text-butter-950">Ringkasan Pengerjaan:</span>
+                        <div class="flex justify-between"><span>Nama Siswa:</span><span id="result-name" class="font-bold text-butter-900">-</span></div>
+                        <div class="flex justify-between"><span>Kelas:</span><span id="result-class" class="font-bold text-butter-900">-</span></div>
+                        <div class="flex justify-between"><span>Jumlah Benar:</span><span id="result-correct" class="font-bold text-emerald-700">0</span></div>
+                        <div class="flex justify-between"><span>Jumlah Salah:</span><span id="result-incorrect" class="font-bold text-rose-700">0</span></div>
+                    </div>
+
+                    <div class="flex justify-center gap-3 pt-2">
+                        <button onclick="resetQuiz()" class="bg-butter-800 hover:bg-butter-900 text-white font-semibold px-6 py-3 rounded-xl shadow transition-all text-sm">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Kuis
+                        </button>
+                        <button onclick="switchTab('beranda')" class="bg-cream-200 hover:bg-cream-300 text-butter-950 font-semibold px-6 py-3 rounded-xl shadow transition-all text-sm">
+                            Kembali ke Beranda
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-butter-950 text-butter-300 text-xs py-4 text-center border-t border-butter-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
+            <p>Media Pembelajaran Moduler Bahasa Arab Komprehensif • MTs Kelas VII (Fase D)</p>
+            <p class="text-butter-400 font-medium">Terintegrasi Google Sheets Database • Standar KMA</p>
+        </div>
+    </footer>
+
+    <div id="toast-modal" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-butter-950 text-white px-5 py-3 rounded-xl shadow-2xl border border-butter-800 flex items-center gap-3 max-w-md">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-butter-400 text-lg"></i>
+        <span id="toast-message" class="text-xs font-medium">Notifikasi sistem</span>
+    </div>
+
+    <script>
+        let gasWebappUrl = localStorage.getItem('mpi_taaruf_gas_url') || 'https://script.google.com/macros/s/AKfycbxIA77E2_qIS1wPbMQhOeGtfFwvLeJ9LALNCOa09uOq3C2Pi3opTOEQ-uy1QD95V7dQ/exec';
+        let currentStudentName = '';
+        let currentStudentClass = '';
+        let quizStartTime = null;
+        let studentAnswersRecord = [];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (gasWebappUrl) {
+                document.getElementById('gas-url-input').value = gasWebappUrl;
+            } else {
+                document.getElementById('gas-url-input').value = 'https://script.google.com/macros/s/AKfycbxIA77E2_qIS1wPbMQhOeGtfFwvLeJ9LALNCOa09uOq3C2Pi3opTOEQ-uy1QD95V7dQ/exec';
+            }
+            const savedName = localStorage.getItem('mpi_student_name');
+            const savedClass = localStorage.getItem('mpi_student_class');
+            if (savedName) document.getElementById('student-name').value = savedName;
+            if (savedClass) document.getElementById('student-class').value = savedClass;
+
+            renderVocab();
+            selectTarkib(0);
+            loadSentenceLabQuestion();
+            changeHiwarScenario();
+        });
+
+        function saveGasUrl() {
+            const val = document.getElementById('gas-url-input').value.trim();
+            gasWebappUrl = val;
+            localStorage.setItem('mpi_taaruf_gas_url', val);
+            showToast("URL Google Apps Script berhasil disimpan!", "success");
+        }
+
+        const vocabData = [
+            { id: 1, ar: 'السَّلَامُ عَلَيْكُمْ', lat: 'Assalamu’alaikum', arti: 'Semoga keselamatan terlimpah kepadamu', kat: 'salam', kontek: 'Sapaan islami utama.' },
+            { id: 2, ar: 'وَعَلَيْكُمُ السَّلَامُ', lat: 'Wa’alaikumussalam', arti: 'Dan semoga keselamatan terlimpah juga', kat: 'salam', kontek: 'Jawaban salam.' },
+            { id: 3, ar: 'صَبَاحُ الْخَيْرِ', lat: 'Shobahul khoir', arti: 'Selamat pagi', kat: 'salam', kontek: 'Sapaan pagi hari.' },
+            { id: 4, ar: 'صَبَاحُ النُّورِ', lat: 'Shobahun nuur', arti: 'Selamat pagi juga', kat: 'salam', kontek: 'Jawaban sapaan pagi.' },
+            { id: 5, ar: 'مَسَاءُ الْخَيْرِ', lat: 'Masa-ul khoir', arti: 'Selamat sore', kat: 'salam', kontek: 'Sapaan sore hari.' },
+            { id: 6, ar: 'مَسَاءُ النُّورِ', lat: 'Masa-un nuur', arti: 'Selamat sore juga', kat: 'salam', kontek: 'Jawaban sapaan sore.' },
+            { id: 7, ar: 'أَهْلًا وَسَهْلًا', lat: 'Ahlan wa sahlan', arti: 'Selamat datang', kat: 'salam', kontek: 'Menyambut tamu/teman.' },
+            { id: 8, ar: 'أَهْلًا بِكَ / بِكِ', lat: 'Ahlan bika / biki', arti: 'Selamat datang juga (L / P)', kat: 'salam', kontek: 'Jawaban selamat datang.' },
+            { id: 9, ar: 'تَشَرَّفْنَا', lat: 'Tasharrofna', arti: 'Senang berkenalan denganmu', kat: 'salam', kontek: 'Kesan perkenalan.' },
+            { id: 10, ar: 'عَفْوًا / عُذْرًا', lat: 'Afwan / Udzran', arti: 'Sama-sama / Permisi', kat: 'salam', kontek: 'Ungkapan sopan.' },
+            { id: 11, ar: 'مَا اسْمُكَ؟', lat: 'Ma ismuka?', arti: 'Siapa namamu? (L)', kat: 'tanya', kontek: 'Menanyakan nama teman laki-laki.' },
+            { id: 12, ar: 'مَا اسْمُكِ؟', lat: 'Ma ismuki?', arti: 'Siapa namamu? (P)', kat: 'tanya', kontek: 'Menanyakan nama teman perempuan.' },
+            { id: 13, ar: 'مَنْ هُوَ؟', lat: 'Man huwa?', arti: 'Siapa dia? (L)', kat: 'tanya', kontek: 'Identitas orang ketiga laki-laki.' },
+            { id: 14, ar: 'مَنْ هِيَ؟', lat: 'Man hiya?', arti: 'Siapa dia? (P)', kat: 'tanya', kontek: 'Identitas orang ketiga perempuan.' },
+            { id: 15, ar: 'مِنْ أَيْنَ أَنْتَ؟', lat: 'Min aina anta?', arti: 'Dari mana kamu?', kat: 'tanya', kontek: 'Asal daerah.' },
+            { id: 16, ar: 'كَيْفَ حَالُكَ؟', lat: 'Kaifa haluka?', arti: 'Bagaimana kabarmu?', kat: 'tanya', kontek: 'Kondisi kesehatan.' },
+            { id: 17, ar: 'تِلْمِيْذٌ / طَالِبٌ', lat: 'Tilmiidzun / Thoolibun', arti: 'Murid / Siswa (L)', kat: 'profesi', kontek: 'Status siswa.' },
+            { id: 18, ar: 'تِلْمِيْذَةٌ / طَالِبَةٌ', lat: 'Tilmiidzatun / Thoolibatun', arti: 'Murid / Siswi (P)', kat: 'profesi', kontek: 'Status siswi.' },
+            { id: 19, ar: 'مُدَرِّسٌ / أُسْتَاذٌ', lat: 'Mudarrisun / Ustaadzun', arti: 'Guru (L)', kat: 'profesi', kontek: 'Pengajar laki-laki.' },
+            { id: 20, ar: 'مُدَرِّسَةٌ / أُسْتَاذَةٌ', lat: 'Mudarrisatun / Ustaadzah', arti: 'Guru (P)', kat: 'profesi', kontek: 'Pengajar perempuan.' },
+            { id: 21, ar: 'صَدِيْقِيْ', lat: 'Shodiqii', arti: 'Temanku (L)', kat: 'profesi', kontek: 'Sahabat laki-laki.' },
+            { id: 22, ar: 'صَدِيْقَتِيْ', lat: 'Shodiqotii', arti: 'Temanku (P)', kat: 'profesi', kontek: 'Sahabat perempuan.' },
+            { id: 23, ar: 'أَنَا', lat: 'Ana', arti: 'Saya', kat: 'dhomir', kontek: 'Diri sendiri.' },
+            { id: 24, ar: 'نَحْنُ', lat: 'Nahnu', arti: 'Kami / Kita', kat: 'dhomir', kontek: 'Kelompok.' },
+            { id: 25, ar: 'هَذَا', lat: 'Hadza', arti: 'Ini (L)', kat: 'dhomir', kontek: 'Tunjuk dekat mudzakkar.' },
+            { id: 26, ar: 'هَذِهِ', lat: 'Hadzihi', arti: 'Ini (P)', kat: 'dhomir', kontek: 'Tunjuk dekat muannas.' }
+        ];
+
+        const tarkibData = [
+            {
+                title: "1. Kata Tanya (أَدَوَاتُ الاِسْتِفْهَامِ)",
+                desc: "Kata tanya untuk menggali informasi dalam perkenalan.",
+                items: [
+                    { ar: "مَنْ هُوَ؟ / مَنْ هِيَ؟", arti: "Siapa dia (L/P)?", contoh: "مَنْ هُوَ؟ هُوَ أُسْتَاذُ اللُّغَةِ الْعَرَبِيَّةِ." },
+                    { ar: "مَا اسْمُكَ؟ / مَا اسْمُكِ؟", arti: "Siapa namamu (L/P)?", contoh: "مَا اسْمُكَ؟ اسْمِيْ عُمَرُ." },
+                    { ar: "مِنْ أَيْنَ أَنْتَ؟", arti: "Dari mana kamu?", contoh: "مِنْ أَيْنَ أَنْتَ؟ أَنَا مِنْ بَانْدُونْج." },
+                    { ar: "كَيْفَ حَالُكَ؟", arti: "Bagaimana kabarmu?", contoh: "كَيْفَ حَالُكَ؟ بِخَيْرٍ وَالْحَمْدُ لِلَّٰهِ." }
+                ]
+            },
+            {
+                title: "2. Kata Ganti Berdiri Sendiri (الضَّمَائِرُ الْمُنْفَصِلَةُ)",
+                desc: "Kata ganti subjek mandiri.",
+                items: [
+                    { ar: "أَنَا / نَحْنُ", arti: "Saya / Kami", contoh: "أَنَا تِلْمِيْذٌ، وَنَحْنُ طُلَابُ الْمَدْرَسَةِ." },
+                    { ar: "أَنْتَ / أَنْتِ", arti: "Kamu (L / P)", contoh: "أَنْتَ صَدِيْقِيْ، وَأَنْتِ صَدِيْقَتِيْ." },
+                    { ar: "هُوَ / هِيَ", arti: "Dia (L / P)", contoh: "هُوَ مُدَرِّسٌ، وَهِيَ مُدَرِّسَةٌ." }
+                ]
+            },
+            {
+                title: "3. Kata Tunjuk Dekat (أَسْمَاءُ الإِشَارَةِ)",
+                desc: "هَذَا (L) dan هَذِهِ (P).",
+                items: [
+                    { ar: "هَذَا + Mudzakkar", arti: "Ini (L)", contoh: "هَذَا أَخِيْ، هُوَ تِلْمِيْذٌ." },
+                    { ar: "هَذِهِ + Muannas", arti: "Ini (P)", contoh: "هَذِهِ أُخْتِيْ، هِيَ تِلْمِيْذَةٌ." }
+                ]
+            },
+            {
+                title: "4. Kata Ganti Bersambung (الضَّمَائِرُ الْمُتَّصِلَةُ)",
+                desc: "Kepunyaan di akhir kata.",
+                items: [
+                    { ar: "ـي / ـكَ / ـكِ", arti: "Milikku / Milikmu (L/P)", contoh: "اسْمِيْ (Namaku) / اسْمُكَ (Namamu)" }
+                ]
+            }
+        ];
+
+        const sentenceLabQuestions = [
+            { targetMeaning: "Saya adalah seorang murid di madrasah", correctSequence: ["أَنَا", "تِلْمِيْذٌ", "فِي", "الْمَدْرَسَةِ"], words: ["تِلْمِيْذٌ", "أَنَا", "الْمَدْرَسَةِ", "فِي", "مُدَرِّسٌ"] },
+            { targetMeaning: "Ini adalah temanku, namanya Hasan", correctSequence: ["هَذَا", "صَدِيْقِيْ", "اسْمُهُ", "حَسَنٌ"], words: ["حَسَنٌ", "هَذِهِ", "صَدِيْقِيْ", "اسْمُهُ", "هَذَا"] }
+        ];
+        let currentLabIndex = 0;
+        let userSelectedLabWords = [];
+
+        const hiwarScenarios = [
+            {
+                partnerName: "Ahmad", partnerRole: "Siswa MTs Baru", avatarIcon: "fa-user-graduate",
+                steps: [
+                    { ar: "السَّلَامُ عَلَيْكُمْ! أَنَا أَحْمَدُ. مَا اسْمُكَ؟", id: "Assalamu'alaikum! Saya Ahmad. Siapa namamu?", options: [
+                        { text: "وَعَلَيْكُمُ السَّلَامُ! اسْمِيْ فِايْزٌ.", correct: true, feedback: "Sempurna!" },
+                        { text: "صَبَاحُ النُّورِ.", correct: false, feedback: "Kurang tepat." }
+                    ]},
+                    { ar: "أَهْلًا بِكَ يَا فَائِزُ! مِنْ أَيْنَ أَنْتَ؟", id: "Selamat datang Faiz! Dari mana asalmu?", options: [
+                        { text: "أَنَا مِنْ سُورَابَايَا.", correct: true, feedback: "Mumtaz!" },
+                        { text: "أَنَا تِلْمِيْذٌ.", correct: false, feedback: "Kurang tepat." }
+                    ]}
+                ]
+            },
+            {
+                partnerName: "Ustadzah Fatimah", partnerRole: "Guru Bahasa Arab", avatarIcon: "fa-chalkboard-user",
+                steps: [
+                    { ar: "صَبَاحُ الْخَيْرِ يَا طَالِبَةُ!", id: "Selamat pagi wahai siswi!", options: [
+                        { text: "صَبَاحُ النُّورِ يَا أُسْتَاذَةُ!", correct: true, feedback: "Sangat santun!" },
+                        { text: "وَعَلَيْكُمُ السَّلَامُ.", correct: false, feedback: "Kurang tepat." }
+                    ]}
+                ]
+            },
+            {
+                partnerName: "Umar", partnerRole: "Teman Sekelas", avatarIcon: "fa-users",
+                steps: [
+                    { ar: "مَنْ هَذَا الرَّجُلُ؟", id: "Siapa laki-laki itu?", options: [
+                        { text: "هَذَا أُسْتَاذُ عُثْمَانُ.", correct: true, feedback: "Tepat sekali!" },
+                        { text: "هَذِهِ عَائِشَةُ.", correct: false, feedback: "Kurang tepat." }
+                    ]}
+                ]
+            }
+        ];
+        let currentHiwarScenarioIdx = 0;
+        let currentHiwarStepIdx = 0;
+
+        const quizData = [
+            { question: "1. مَنْ هُوَ؟ - هُوَ ... Kata profesi yang tepat...", options: ["مُدَرِّسَةٌ", "مُدَرِّسٌ", "تِلْمِيْذَةٌ", "صَدِيْقَتِيْ"], correct: 1, explanation: "مَنْ هُوَ merujuk pada subjek laki-laki (مُدَرِّسٌ)." },
+            { question: "2. Ketika siswi menanyakan nama teman perempuannya...", options: ["مَا اسْمُكَ؟", "مَا اسْمُكِ؟", "مِنْ أَيْنَ أَنْتَ؟", "كَيْفَ حَالُكَ؟"], correct: 1, explanation: "Untuk mukhotobah (perempuan) harakat kaf kasrah (مَا اسْمُكِ؟)." },
+            { question: "3. Ungkapan 'تَشَرَّفْنَا' bermakna...", options: ["Apa kabarmu?", "Dari mana asalmu?", "Senang berkenalan denganmu", "Selamat pagi"], correct: 2, explanation: "تَشَرَّفْنَا berarti Senang berkenalan denganmu." },
+            { question: "4. هَذِهِ صَدِيْقَتِيْ Menggunakan هَذِهِ karena subjeknya...", options: ["Mufrad Mudzakkar", "Mufrad Muannas", "Jamak Taksir", "Fi'il"], correct: 1, explanation: "هَذِهِ khusus untuk perempuan (Muannas)." },
+            { question: "5. Jawaban tepat untuk 'هَلْ أَنْتَ تِلْمِيْذٌ؟'...", options: ["لَا، هُوَ مُدَرِّسٌ", "نَعَمْ، أَنَا تِلْمِيْذٌ", "هِيَ طَالِبَةٌ", "صَبَاحُ النُّورِ"], correct: 1, explanation: "هَلْ dijawab نَعَمْ menyesuaikan dhomir." },
+            { question: "6. Dhomir munfashil 'Kami / Kita'...", options: ["أَنَا", "أَنْتُمْ", "نَحْنُ", "هُوَ"], correct: 2, explanation: "نَحْنُ adalah dhomir mutakallim jamak." },
+            { question: "7. Sapaan 'مَسَاءُ الْخَيْرِ' dibalas dengan...", options: ["صَبَاحُ النُّورِ", "مَسَاءُ النُّورِ", "أَهْلًا بِكَ", "وَعَلَيْكُمُ السَّلَامُ"], correct: 1, explanation: "مَسَاءُ الْخَيْرِ dijawab مَسَاءُ النُّورِ." },
+            { question: "8. Pertanyaan 'مِنْ أَيْنَ أَنْتَ؟' dijawab menggunakan...", options: ["فِي", "إِلَى", "مِنْ", "عَلَى"], correct: 2, explanation: "Pertanyaan مِنْ أَيْنَ dijawab dengan مِنْ." },
+            { question: "9. Kata 'صَدِيْقِيْ' terdiri dari صَدِيْق dan ـي menunjukkan...", options: ["Kepunyaan saya", "Kepunyaanmu", "Kepunyaannya", "Kata tanya"], correct: 0, explanation: "Ya mutakallim (ـي) menyatakan kepunyaan saya." },
+            { question: "10. Terjemahan 'أَنَا طَالِبٌ نَشِيْطٌ فِي الْمَدْرَسَةِ'...", options: ["Dia guru rajin", "Saya murid rajin di madrasah", "Kami murid di madrasah", "Kamu teman baik"], correct: 1, explanation: "أَنَا=Saya, طَالِبٌ=Murid, نَشِيْطٌ=Rajin, فِي الْمَدْرَسَةِ=Di madrasah." }
+        ];
+
+        let currentTab = 'beranda';
+        let currentQuizIndex = 0;
+        let score = 0;
+        let quizAnswered = false;
+
+        function switchTab(tabId) {
+            currentTab = tabId;
+            const tabs = ['beranda', 'mufrodat', 'tarkib', 'hiwar', 'kuis'];
+            tabs.forEach(t => {
+                const section = document.getElementById(`tab-${t}`);
+                const btn = document.getElementById(`nav-${t}`);
+                if (t === tabId) {
+                    section.classList.remove('hidden');
+                    btn.classList.add('tab-active');
+                    btn.classList.remove('text-butter-100');
+                } else {
+                    section.classList.add('hidden');
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('text-butter-100');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderVocab() {
+            const grid = document.getElementById('vocab-grid');
+            const searchVal = document.getElementById('vocab-search').value.toLowerCase();
+            const catVal = document.getElementById('vocab-category').value;
+            grid.innerHTML = '';
+            const filtered = vocabData.filter(v => {
+                const matchCat = (catVal === 'all' || v.kat === catVal);
+                const matchSearch = v.ar.includes(searchVal) || v.lat.toLowerCase().includes(searchVal) || v.arti.toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
+            });
+            document.getElementById('vocab-count-label').innerText = `Menampilkan ${filtered.length} dari ${vocabData.length} kosakata`;
+            filtered.forEach(v => {
+                const card = document.createElement('div');
+                card.className = "bg-cream-50 p-4 rounded-2xl border border-butter-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3";
+                let catBadgeClass = "bg-butter-200 text-butter-900";
+                let catLabel = "Sapaan";
+                if(v.kat === 'tanya') { catBadgeClass = "bg-peach-100 text-peach-500"; catLabel = "Kata Tanya"; }
+                else if(v.kat === 'profesi') { catBadgeClass = "bg-amber-100 text-amber-900"; catLabel = "Profesi"; }
+                else if(v.kat === 'dhomir') { catBadgeClass = "bg-butter-300 text-butter-950"; catLabel = "Dhomir/Isyarah"; }
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${catBadgeClass}">${catLabel}</span>
+                            <button onclick="playSpeech('${v.ar.replace(/'/g, "\\'")}')" class="w-7 h-7 rounded-full bg-white border border-butter-300 flex items-center justify-center text-butter-800 hover:bg-butter-100 text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="text-2xl font-bold font-arabic arabic-text text-butter-950 text-right my-1">${v.ar}</div>
+                        <div class="text-xs font-semibold text-butter-800">${v.lat}</div>
+                        <div class="text-xs text-slate-600 mt-1 font-medium">${v.arti}</div>
+                    </div>
+                    <div class="pt-2 border-t border-butter-200/60 text-[11px] text-slate-500 italic bg-white p-2 rounded-xl">
+                        <i class="fa-solid fa-circle-info text-butter-600 mr-1"></i> ${v.kontek}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterVocab() { renderVocab(); }
+
+        function playSpeech(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ar-SA';
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+                showToast(`Memutar audio: ${text}`, 'info');
+            } else {
+                showToast(`Audio: ${text}`, 'info');
+            }
+        }
+
+        function selectTarkib(idx) {
+            for (let i = 0; i < tarkibData.length; i++) {
+                const btn = document.getElementById(`tarkib-btn-${i}`);
+                if (btn) {
+                    btn.className = (i === idx) ? 
+                        "p-3 rounded-xl border-2 border-butter-600 bg-butter-100 text-butter-950 font-semibold text-xs md:text-sm text-center transition-all shadow-sm" :
+                        "p-3 rounded-xl border-2 border-butter-200 bg-white text-slate-700 font-semibold text-xs md:text-sm text-center transition-all hover:bg-butter-50";
+                }
+            }
+            const data = tarkibData[idx];
+            const container = document.getElementById('tarkib-content');
+            let html = `<div class="space-y-1"><h3 class="text-lg font-bold text-butter-950">${data.title}</h3><p class="text-xs text-slate-600">${data.desc}</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">`;
+            data.items.forEach(item => {
+                html += `<div class="bg-white p-3.5 rounded-xl border border-butter-200 shadow-sm flex flex-col justify-between space-y-2"><div class="flex justify-between items-start"><span class="text-xs font-bold text-butter-800 bg-butter-50 px-2 py-0.5 rounded border border-butter-200">${item.arti}</span><div class="font-arabic arabic-text text-xl font-bold text-butter-950">${item.ar}</div></div><div class="bg-cream-50 p-2 rounded-lg border border-butter-100 text-xs text-slate-700"><span class="font-semibold text-butter-900">Contoh:</span> <span class="font-arabic arabic-text text-sm mr-1">${item.contoh}</span></div></div>`;
+            });
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function loadSentenceLabQuestion() {
+            const lab = sentenceLabQuestions[currentLabIndex];
+            document.getElementById('lab-target-meaning').innerHTML = `<span class="text-butter-400 font-bold">Target Kalimat #${currentLabIndex + 1}:</span> "${lab.targetMeaning}"`;
+            userSelectedLabWords = [];
+            renderLabSelectedWords();
+            const shuffled = [...lab.words].sort(() => Math.random() - 0.5);
+            const optionsBox = document.getElementById('lab-word-options');
+            optionsBox.innerHTML = '';
+            shuffled.forEach((word) => {
+                const btn = document.createElement('button');
+                btn.className = "px-4 py-2 bg-butter-900 hover:bg-butter-800 text-butter-100 rounded-xl text-sm font-arabic arabic-text border border-butter-700 shadow transition-all";
+                btn.innerText = word;
+                btn.onclick = () => {
+                    userSelectedLabWords.push(word);
+                    btn.disabled = true;
+                    btn.classList.add('opacity-30', 'cursor-not-allowed');
+                    renderLabSelectedWords();
+                };
+                optionsBox.appendChild(btn);
+            });
+        }
+
+        function renderLabSelectedWords() {
+            const dropZone = document.getElementById('lab-selected-words');
+            dropZone.innerHTML = '';
+            if (userSelectedLabWords.length === 0) {
+                dropZone.innerHTML = `<span class="text-xs text-butter-500 italic w-full text-center">Tekan kata-kata di bawah untuk menyusun kalimat di sini...</span>`;
+                return;
+            }
+            userSelectedLabWords.forEach((word, idx) => {
+                const tag = document.createElement('span');
+                tag.className = "px-3 py-1.5 bg-butter-400 text-butter-950 font-bold rounded-lg text-sm font-arabic arabic-text flex items-center gap-2 shadow";
+                tag.innerHTML = `${word} <i class="fa-solid fa-xmark text-xs cursor-pointer hover:text-red-700" onclick="removeLabWord(${idx})"></i>`;
+                dropZone.appendChild(tag);
+            });
+        }
+
+        function removeLabWord(idx) {
+            userSelectedLabWords.splice(idx, 1);
+            renderLabSelectedWords();
+            const optionsBox = document.getElementById('lab-word-options');
+            const btns = optionsBox.getElementsByTagName('button');
+            for (let btn of btns) {
+                const countInUser = userSelectedLabWords.filter(w => w === btn.innerText).length;
+                if (countInUser === 0) {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-30', 'cursor-not-allowed');
+                }
+            }
+        }
+
+        function resetSentenceLab() { loadSentenceLabQuestion(); }
+
+        function checkSentenceLab() {
+            const currentLab = sentenceLabQuestions[currentLabIndex];
+            const isCorrect = JSON.stringify(userSelectedLabWords) === JSON.stringify(currentLab.correctSequence);
+            if (isCorrect) {
+                showToast("Sempurna! Susunan kalimat tepat sekali.", "success");
+                setTimeout(() => {
+                    currentLabIndex = (currentLabIndex + 1) % sentenceLabQuestions.length;
+                    loadSentenceLabQuestion();
+                }, 1500);
+            } else {
+                showToast("Susunan belum tepat. Periksa kembali.", "error");
+            }
+        }
+
+        function changeHiwarScenario() {
+            const sel = document.getElementById('hiwar-scenario-select');
+            currentHiwarScenarioIdx = parseInt(sel.value);
+            currentHiwarStepIdx = 0;
+            const sc = hiwarScenarios[currentHiwarScenarioIdx];
+            document.getElementById('hiwar-partner-name').innerText = sc.partnerName;
+            document.getElementById('hiwar-partner-role').innerText = sc.partnerRole;
+            document.getElementById('hiwar-avatar').innerHTML = `<i class="fa-solid ${sc.avatarIcon}"></i>`;
+            document.getElementById('chat-history').innerHTML = '';
+            document.getElementById('chat-options-box').style.display = 'block';
+            renderHiwarStep();
+        }
+
+        function renderHiwarStep() {
+            const sc = hiwarScenarios[currentHiwarScenarioIdx];
+            const step = sc.steps[currentHiwarStepIdx];
+            const history = document.getElementById('chat-history');
+            document.getElementById('hiwar-step-badge').innerText = `Langkah ${currentHiwarStepIdx + 1} dari ${sc.steps.length}`;
+
+            const partnerMsg = document.createElement('div');
+            partnerMsg.className = "flex items-start gap-3";
+            partnerMsg.innerHTML = `<div class="w-8 h-8 rounded-full bg-butter-800 text-butter-200 flex items-center justify-center text-xs font-bold shrink-0"><i class="fa-solid ${sc.avatarIcon}"></i></div><div class="bg-butter-900 p-4 rounded-2xl rounded-tl-none border border-butter-800 max-w-xl space-y-1"><p class="font-arabic arabic-text text-xl text-butter-300 font-bold">${step.ar}</p><p class="text-xs text-butter-200/80">${step.id}</p></div>`;
+            history.appendChild(partnerMsg);
+            history.scrollTop = history.scrollHeight;
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            step.options.forEach((opt) => {
+                const btn = document.createElement('button');
+                btn.className = "p-3 bg-butter-900 hover:bg-butter-800 border border-butter-800 rounded-xl text-left text-xs font-medium transition-all text-butter-100 flex items-center justify-between";
+                btn.innerHTML = `<span>${opt.text}</span> <i class="fa-solid fa-angle-right text-butter-400"></i>`;
+                btn.onclick = () => handleHiwarResponse(opt);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleHiwarResponse(opt) {
+            const history = document.getElementById('chat-history');
+            const userMsg = document.createElement('div');
+            userMsg.className = "flex items-start gap-3 justify-end";
+            userMsg.innerHTML = `<div class="bg-butter-400 text-butter-950 p-3.5 rounded-2xl rounded-tr-none max-w-xl space-y-1 shadow font-semibold text-xs"><p class="font-arabic arabic-text text-base">${opt.text}</p></div><div class="w-8 h-8 rounded-full bg-butter-400 text-butter-950 flex items-center justify-center text-xs font-bold shrink-0">أ</div>`;
+            history.appendChild(userMsg);
+            history.scrollTop = history.scrollHeight;
+            showToast(opt.feedback, opt.correct ? 'success' : 'error');
+
+            if (opt.correct) {
+                currentHiwarStepIdx++;
+                const sc = hiwarScenarios[currentHiwarScenarioIdx];
+                if (currentHiwarStepIdx < sc.steps.length) {
+                    setTimeout(renderHiwarStep, 1000);
+                } else {
+                    setTimeout(() => {
+                        const finishMsg = document.createElement('div');
+                        finishMsg.className = "text-center p-4 bg-butter-400/20 border border-butter-400/30 rounded-xl text-butter-300 font-semibold text-xs";
+                        finishMsg.innerHTML = `<i class="fa-solid fa-award text-base mr-2"></i> Alhamdulillah! Skenario Hiwar selesai.`;
+                        history.appendChild(finishMsg);
+                        document.getElementById('chat-options-box').style.display = 'none';
+                        history.scrollTop = history.scrollHeight;
+                    }, 1000);
+                }
+            }
+        }
+
+        function startQuiz() {
+            const nameVal = document.getElementById('student-name').value.trim();
+            const classVal = document.getElementById('student-class').value;
+            if (!nameVal) {
+                showToast("Silakan masukkan Nama Lengkap Anda terlebih dahulu!", "error");
+                document.getElementById('student-name').focus();
+                return;
+            }
+            currentStudentName = nameVal;
+            currentStudentClass = classVal;
+            localStorage.setItem('mpi_student_name', nameVal);
+            localStorage.setItem('mpi_student_class', classVal);
+
+            currentQuizIndex = 0;
+            score = 0;
+            quizStartTime = new Date();
+            studentAnswersRecord = [];
+
+            document.getElementById('quiz-start-screen').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-result-screen').classList.add('hidden');
+            document.getElementById('quiz-student-badge').innerText = `Siswa: ${currentStudentName} (${currentStudentClass})`;
+            loadQuizQuestion();
+        }
+
+        function loadQuizQuestion() {
+            quizAnswered = false;
+            const q = quizData[currentQuizIndex];
+            document.getElementById('quiz-progress').innerText = `Soal ${currentQuizIndex + 1} dari 10`;
+            document.getElementById('quiz-score-live').innerText = `Skor: ${score}`;
+            document.getElementById('quiz-question').innerText = q.question;
+            
+            const optionsDiv = document.getElementById('quiz-options');
+            optionsDiv.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-3.5 rounded-xl border border-butter-200 bg-cream-50 hover:bg-butter-50 text-left text-xs md:text-sm font-medium transition-all flex items-center justify-between";
+                btn.innerHTML = `<span>${opt}</span> <span class="w-6 h-6 rounded-full bg-white border border-butter-300 flex items-center justify-center text-xs text-slate-500 font-bold shrink-0">${String.fromCharCode(65 + idx)}</span>`;
+                btn.onclick = () => selectQuizAnswer(idx, opt);
+                optionsDiv.appendChild(btn);
+            });
+            document.getElementById('quiz-explanation').classList.add('hidden');
+            document.getElementById('next-question-btn').classList.add('hidden');
+        }
+
+        function selectQuizAnswer(selectedIndex, selectedText) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+            const q = quizData[currentQuizIndex];
+            const isCorrect = (selectedIndex === q.correct);
+            
+            studentAnswersRecord.push({
+                soalNo: currentQuizIndex + 1,
+                pertanyaan: q.question,
+                jawabanSiswa: selectedText,
+                jawabanBenar: q.options[q.correct],
+                status: isCorrect ? 'Benar' : 'Salah'
+            });
+
+            const optionsDiv = document.getElementById('quiz-options');
+            const buttons = optionsDiv.getElementsByTagName('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === q.correct) {
+                    buttons[i].className = "p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 text-left text-xs md:text-sm font-semibold flex items-center justify-between";
+                } else if (i === selectedIndex) {
+                    buttons[i].className = "p-3.5 rounded-xl border-2 border-rose-400 bg-rose-50 text-rose-950 text-left text-xs md:text-sm font-semibold flex items-center justify-between";
+                } else {
+                    buttons[i].className = "p-3.5 rounded-xl border border-slate-200 bg-slate-50 opacity-50 text-left text-xs md:text-sm font-medium flex items-center justify-between";
+                }
+            }
+
+            if (isCorrect) {
+                score += 10;
+                showToast("Jawaban Benar! Mumtaz.", "success");
+            } else {
+                showToast("Kurang tepat. Simak pembahasan.", "error");
+            }
+            document.getElementById('quiz-score-live').innerText = `Skor: ${score}`;
+
+            const expBox = document.getElementById('quiz-explanation');
+            expBox.className = `p-4 rounded-xl border ${isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-amber-50 border-amber-200 text-amber-900'} space-y-1`;
+            expBox.innerHTML = `<div class="font-bold text-xs uppercase tracking-wider flex items-center gap-1"><i class="fa-solid fa-graduation-cap"></i> Pembahasan:</div><p class="text-xs leading-relaxed">${q.explanation}</p>`;
+            expBox.classList.remove('hidden');
+
+            const nextBtn = document.getElementById('next-question-btn');
+            nextBtn.innerText = (currentQuizIndex < quizData.length - 1) ? "Soal Selanjutnya" : "Lihat Hasil Akhir Evaluasi";
+            nextBtn.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizData.length) {
+                loadQuizQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('quiz-result-screen').classList.remove('hidden');
+            document.getElementById('final-score-text').innerText = `Skor Anda: ${score} / 100`;
+            document.getElementById('result-name').innerText = currentStudentName;
+            document.getElementById('result-class').innerText = currentStudentClass;
+            
+            const correctCount = studentAnswersRecord.filter(a => a.status === 'Benar').length;
+            const incorrectCount = studentAnswersRecord.filter(a => a.status === 'Salah').length;
+            document.getElementById('result-correct').innerText = correctCount;
+            document.getElementById('result-incorrect').innerText = incorrectCount;
+
+            // Submit data to Google Apps Script
+            submitQuizToGAS({
+                nama: currentStudentName,
+                kelas: currentStudentClass,
+                waktuPengerjaan: new Date().toLocaleString('id-ID'),
+                skor: score,
+                jumlahBenar: correctCount,
+                jumlahSalah: incorrectCount,
+                detailJawaban: studentAnswersRecord
+            });
+        }
+
+        function submitQuizToGAS(payload) {
+            const syncText = document.getElementById('sync-status-text');
+            if (!gasWebappUrl) {
+                syncText.className = "text-xs font-semibold text-amber-700 bg-amber-50 p-2 rounded-lg border border-amber-200";
+                syncText.innerText = "URL Google Apps Script belum diatur guru. Hasil disimpan lokal.";
+                showToast("URL GAS belum diatur di menu kuis.", "error");
+                return;
+            }
+
+            syncText.className = "text-xs font-semibold text-butter-800 bg-butter-50 p-2 rounded-lg border border-butter-200";
+            syncText.innerText = "Mengirim data ke database Google Sheets...";
+
+            fetch(gasWebappUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                syncText.className = "text-xs font-semibold text-emerald-700 bg-emerald-50 p-2 rounded-lg border border-emerald-200";
+                syncText.innerText = "Berhasil! Data evaluasi telah tersimpan di Google Sheets guru.";
+                showToast("Hasil kuis tersimpan di database!", "success");
+            })
+            .catch(err => {
+                syncText.className = "text-xs font-semibold text-rose-700 bg-rose-50 p-2 rounded-lg border border-rose-200";
+                syncText.innerText = "Gagal menyinkronkan ke Google Sheets. Periksa koneksi/URL GAS.";
+                showToast("Gagal mengirim ke database.", "error");
+            });
+        }
+
+        function resetQuiz() { startQuiz(); }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast-modal');
+            const icon = document.getElementById('toast-icon');
+            const msg = document.getElementById('toast-message');
+            msg.innerText = message;
+            icon.className = type === 'success' ? "fa-solid fa-circle-check text-butter-400 text-lg" : 
+                           type === 'error' ? "fa-solid fa-circle-exclamation text-peach-400 text-lg" : 
+                           "fa-solid fa-circle-info text-butter-300 text-lg";
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-32', 'opacity-0'), 3000);
+        }
+    </script>
+</body>
+</html>
